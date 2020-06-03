@@ -1,0 +1,89 @@
+/* body */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgba(230,230,230,0.15);
+}
+
+/* div classes */
+.page-contents {
+  padding-top:100px;
+  padding-left: 10%;
+  padding-right:10%;
+}
+
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  background-color: rgba(0,0,0,0.850);
+  -moz-box-shadow:      0 0 10px rgba(0,0,0,0.3);
+  -webkit-box-shadow:   0 0 10px rgba(0,0,0,0.3);
+  box-shadow:           0 0 10px rgba(0,0,0,0.3);
+}
+
+.contents {
+  padding: 10px;
+}
+
+.card {
+  border: 1px solid black;
+  border-radius: 0px;
+  -moz-box-shadow:      0 0 10px rgba(0,0,0,0.1);
+  -webkit-box-shadow:   0 0 10px rgba(0,0,0,0.1);
+  box-shadow:           0 0 10px rgba(0,0,0,0.1);
+}
+
+.dark-background {
+  background-color:rgba(0,0,0,1);
+  color: white;
+}
+
+.viz {
+  text-align:center;
+  padding:5px;
+}
+
+/* text */
+code,
+a,
+h1,
+h2,
+h3 {
+  font-family: Inconsolata, monospace;
+}
+
+h1 {
+  font-size: 72px;
+  font-weight: 200;
+}
+
+h4,
+h5,
+h6 {
+  font-family: Lora, serif;
+  font-weight: 200;
+}
+
+a {
+  font-weight:500;
+}
+
+p {
+  font-family: Lora, serif;
+  font-weight: 200;
+  font-size: 16px;
+}
+
+code {
+  font-family: Inconsolata, monospace;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+hr {
+  border-top: 1px solid black;
+}
