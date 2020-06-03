@@ -1,6 +1,6 @@
 const heightValue = 400;
 const widthValue = 600;
-const margin = {top: 20, right: 10, bottom: 20, left: 10}
+const margin = {top: 30, right: 10, bottom: 30, left: 10}
 
 // Create SVG and padding for the chart
 const svg = d3
@@ -20,9 +20,7 @@ function random1D(len) {
 }
 
 // Initialize at set length
-length = 50
-data = random1D(length)
-console.log(data)
+length = 20
 
 // X Scale
 var x = d3.scaleLinear()
@@ -33,39 +31,65 @@ var y = d3.scaleLinear()
     .domain([0, 1]) // input
     .range([margin.top, heightValue - margin.bottom]); // output
 
-// Define the line
-var valueline = d3.line()
-  .x(function(d,i) { return x(i) })
-  .y(function(d) { return y(d) })
-  .curve(d3.curveMonotoneX);
-
-// Define update
-function update() {
-  d3.select("#staticPath1")
-    .transition()
-    .delay(100)
-    .ease(d3.easeExpOut)
-    .duration(1000)
-    .attr("d", valueline(random1D(length)))
-    .on("start", update)
-}
-
+function createLine(i) {
 // Initialize line
-line = svg
+return svg
   .append('g')
   .append("path")
-  .attr("id","staticPath1")
-  .datum(data)
+  .attr("class","rangePath")
+  .datum(random1D(length))
   .attr("d", d3.line()
     .x(function(d,i) { return x(i) })
-    .y(heightValue/2)
-    .curve(d3.curveMonotoneX)
-  )
-  .attr("stroke", "black")
-  .style("stroke-width", 2)
-  .style("fill", "none")
+    .y(function(d,i) {
+        return (heightValue-margin.bottom) // position at bottom
+               + ( -1*Math.sin(i/((length-1)/Math.PI))*(y(d)/20)  )
+      })
+    .curve(d3.curveBasis))
+  .style("fill", d3.rgb(255/i,i*20,255,0.95))
   .transition()
-  .duration(1000)
-  .ease(d3.easeExpOut)
-  .attr("d", valueline)
-  .on("start", update())
+  .duration(0)
+
+}
+
+function startNoise(lines) {
+  for (l = 0; l < numLines.length; l++) {
+
+    line = lines[l];
+    line
+      .on("start", function update() {d3.select(this)
+          .datum(random1D(length))
+          .transition()
+          .delay(400)
+          .duration(600)
+          .ease(d3.easeExpOut)
+          .attr("d", d3.line()
+              .x(function(d,i) { return x(i) })
+              .y(function(d,i) {
+                  return (heightValue-margin.bottom) // position at bottom
+                         + ( -20*Math.sin(i/((length-1)/Math.PI))*(y(d)/20)  )
+                })
+              .curve(d3.curveBasis))
+          .on("start", update)});
+  }
+}
+
+function updateAmplitude(lines, amplitude) {
+  console.log('hi')
+  d3.selectAll("rangePath")
+    .attr("fill", "black")
+}
+
+numLines = d3.range(0,14)
+lines = []
+
+for (i = 0; i < numLines.length; i++) {
+  line = createLine(i);
+  lines.push(line)
+}
+
+startNoise(lines=lines)
+
+// start
+d3.select("#amplitudeButton").on("click", function() {
+  updateAmplitude(lines=lines, amplitude=40)
+})
