@@ -1,8 +1,8 @@
-const heightValue = 400;
+const heightValue = 600;
 const widthValue = 600;
 const margin = {top: 30, right: 10, bottom: 30, left: 10}
 const curveSmoothing = 1
-
+const maxLines = 30
 // Create SVG and padding for the chart
 const svg = d3
   .select("#static1")
@@ -31,13 +31,21 @@ var x = d3.scaleLinear()
 var y = d3.scaleLinear()
     .domain([0, 1]) // input
     .range([margin.top, heightValue - margin.bottom]); // output
+// C Scale
+var c = d3.scaleLinear()
+    .domain([0,maxLines-2])
+    .range([d3.rgb(255,0,255),d3.rgb(0,255,255)])
+// line Scale for transition length
+var lineScale = d3.scaleLinear()
+    .domain([0,maxLines])
+    .range([300,1000])
 
 
 function pushLines(l){
   d3.selectAll(".rangePath")
     .each(function(d,i){
       transF = d3.select(this)
-        .attr("transform", "translate(0 "+ -l*5 +")")
+        .attr("transform", "translate(0 "+ -l*3 +")")
     })
 }
 
@@ -48,27 +56,28 @@ return svg
   .append("path")
   .attr("class","rangePath")
   .datum(random1D(length))
-  .style("fill", d3.rgb(l*14,500/l,255))
+  .style("fill", function(d,i){ return c(l); })
   .style("stroke", "black")
-  .style("stroke-width", "0.5px")
-  .attr("transform", "translate(0 0)")
+  .style("stroke-width", "0.04px")
+  .style("opacity", 0)
   .transition()
   .on("start", function update(d,i) {
     d3.select(this)
       .datum(random1D(length))
       .transition()
-      .delay(150)
-      .duration(300)
+      .delay(function(d,i){ return lineScale(l) })
+      .duration(function(d,i){ return lineScale(l) })
+      .style("opacity", 1)
       .attr("d", d3.line()
         .x(function(d,i) { return x(i) })
         .y(function(d,i) {
 
             distCenter = Math.abs(x(i) - (widthValue/2))
-            varCenter = Math.max(((widthValue/2) - 120 - distCenter)/120,0.2)
+            varCenter = Math.max(((widthValue/2) - 150*(l/(maxLines*(3/4))) - distCenter)/150,0.2)
 
             return (
-              heightValue*(2/3)) // position at bottom
-              + (l*10) + ( -7*varCenter*Math.sin(i/((length-1)/Math.PI))*(y(d)/20)  )
+              heightValue*(1/2)) // position at bottom
+              + (l*12) + ( -4*varCenter*Math.sin(i/((length-1)/Math.PI))*(y(d)/20) )
           })
         .curve(d3.curveBundle.beta(curveSmoothing)))
         .on("start", update)
@@ -76,25 +85,19 @@ return svg
 
 }
 
+initialLoops = d3.range(0,23)
+for (i=0; i<initialLoops.length; i++){
 
-function removeLine(l) {
+createLine(i)
 
 }
 
-numLines = d3.range(0,13)
-lines = []
-
-iteration = {"i":4}
-line = createLine(0);
-line = createLine(1);
-line = createLine(2);
-line = createLine(3);
-line = createLine(4);
-pushLines(4)
+iteration = {"i":22}
+pushLines(22)
 
 // start
 d3.select("#addButton").on("click", function() {
-  if (iteration['i']<20){
+  if (iteration['i']<maxLines){
     i = iteration['i']+=1
     createLine(i)
     pushLines(i)
