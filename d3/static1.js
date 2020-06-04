@@ -38,7 +38,7 @@ var c = d3.scaleLinear()
 // line Scale for transition length
 var lineScale = d3.scaleLinear()
     .domain([0,maxLines])
-    .range([300,1000])
+    .range([2000,100])
 
 
 function pushLines(l){
@@ -58,13 +58,14 @@ return svg
   .datum(random1D(length))
   .style("fill", function(d,i){ return c(l); })
   .style("stroke", "black")
-  .style("stroke-width", "0.04px")
+  .style("stroke-width", "0.1px")
   .style("opacity", 0)
   .transition()
   .on("start", function update(d,i) {
     d3.select(this)
       .datum(random1D(length))
       .transition()
+      .ease(d3.easeExpOut)
       .delay(function(d,i){ return lineScale(l) })
       .duration(function(d,i){ return lineScale(l) })
       .style("opacity", 1)
