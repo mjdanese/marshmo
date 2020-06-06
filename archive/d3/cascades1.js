@@ -1,11 +1,15 @@
-const heightValue = 600;
+function cascades1() {d3.select("svg").remove();
+console.log("FULL")
+
+const heightValue = 550;
 const widthValue = 600;
 const margin = {top: 30, right: 10, bottom: 30, left: 10}
 const curveSmoothing = 1
-const maxLines = 30
+const maxLines = 20
+
 // Create SVG and padding for the chart
 const svg = d3
-  .select("#static1")
+  .select("#viz")
   .append("svg")
   .attr("viewBox", `0 0 ${widthValue} ${heightValue}`)
 
@@ -21,7 +25,7 @@ function random1D(len) {
 }
 
 // Initialize at set length
-length = 40
+length = 30
 
 // X Scale
 var x = d3.scaleLinear()
@@ -45,7 +49,7 @@ function pushLines(l){
   d3.selectAll(".rangePath")
     .each(function(d,i){
       transF = d3.select(this)
-        .attr("transform", "translate(0 "+ -l*3 +")")
+        .attr("transform", "translate(0 "+ -l*7 +")")
     })
 }
 
@@ -78,7 +82,7 @@ return svg
 
             return (
               heightValue*(1/2)) // position at bottom
-              + (l*12) + ( -4*varCenter*Math.sin(i/((length-1)/Math.PI))*(y(d)/20) )
+              + (l*20) + ( -3*varCenter*Math.sin(i/((length-1)/Math.PI))*(y(d)/20) )
           })
         .curve(d3.curveBundle.beta(curveSmoothing)))
         .on("start", update)
@@ -86,15 +90,15 @@ return svg
 
 }
 
-initialLoops = d3.range(0,23)
+initialLoops = d3.range(0,18)
 for (i=0; i<initialLoops.length; i++){
 
 createLine(i)
 
 }
 
-iteration = {"i":22}
-pushLines(22)
+iteration = {"i":17}
+pushLines(17)
 
 // start
 d3.select("#addButton").on("click", function() {
@@ -120,3 +124,4 @@ d3.select("#subButton").on("click", function() {
     d3.select(this).transition().duration(500).style("opacity",0)
   }
 })
+}

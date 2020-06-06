@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="archive/style.css">
 
   <!-- Navication JS -->
   <script src="nav.js"></script>
@@ -25,69 +25,35 @@
 </head>
 
 <body>
+<div id='app'>
+  <div class="page-contents">
 
-<div class="page-contents">
+    <navtop @update-script='updateWork'></navtop>
 
-  <h1>site title</h1><br>
-
-  <div class="card">
-    <div class="card-body">
-      <h3>Cascades 1</h3>
-      <hr>
-      <p>Yet another take on noisy lines in d3</p>
-      <div class="viz" id="static1">
-
+    <div class="card">
+      <div class="card-body">
+        <h4>{{title}}{{number}}</h4>
+        <hr>
+        <p>{{description}}</p>
+        <div v-for="(script, index) in scripts" id="viz" class="viz">
+          <p>{{scripts[index]}}</p>
+        </div>
+        <hr>
       </div>
-      <hr>
-      <button id='addButton' class="btn btn-outline-light btn-sm">+</button>
-      <button id='subButton' class="btn btn-outline-light btn-sm">-</button>
-      <script src="d3/static1.js"></script>
     </div>
-  </div>
-  <br><br>
-  <div class="archive-link" style="text-align: right;">
-    <a href="#" class="btn btn-dark btn-sm">Top</a>
+
   </div>
 
-
-
+<br><br><br><br>
+<navbtm></navbtn>
 </div>
 
-<br><br><br><br><br><br>
-<footer>
-<div class="footer">
-  <div class="footer contents">
-        <a href="https://github.com/mjdanese/mdanesecom"
-           target="_blank"
-           class="btn btn-outline-light btn-sm">Github</a>
-        <a href="https://www.instagram.com/mdanese/"
-           target="_blank"
-           class="btn btn-outline-light btn-sm">ʕ•ᴥ•ʔ</a>
-       <a class="btn btn-outline-light btn-sm"
-          data-toggle="collapse"
-          href="#collapseContact"
-          role="button"
-          aria-expanded="false"
-          aria-controls="collapseContact"
-          onclick="collapseClick(this)"
-          id="collapseContactButton">Contact</a>
-
-        <div class="collapse" id="collapseContact">
-          <br>
-          <div class="card dark-background">
-            <br>
-            <p>Marshall Danese</p>
-            <a href="mailto:marshalldanese@gmail.com"
-               class="dark-background-link"
-               style="color:white;">marshalldanese@gmail.com</a>
-            <a href="https://www.linkedin.com/in/mjdanese/"
-               target="_blank"
-               style="color:white;">LinkedIn</a>
-            <br>
-          </div>
-          <br>
-</div>
-
-</footer>
+<!-- Vue -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="main.js"></script>
+<script type="module">
+import { cascades1Lite } from '/archive/d3/cascades1Lite.js';
+import { cascades1 } from '/archive/d3/cascades1.js';
+</script>
 </body>
 </html>

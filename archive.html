@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- D3 -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <title>mdanese</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;500;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="archive/style.css">
+
+  <!-- Navication JS -->
+  <script src="nav.js"></script>
+
+</head>
+
+<body>
+
+<div class="page-contents">
+
+  <h1><a href='#'>marshall danese /archive</a></h1> <br>
+  <a href="/archive" class="btn btn-dark btn-sm">Random</a>
+  <a href="/archive" class="btn btn-dark btn-sm">Archive</a>
+  <a href="/archive" class="btn btn-dark btn-sm">About</a>
+  <br><br>
+
+  <div class="card" style="width: 18rem;height: 20rem;" >
+    <div class="card-body">
+      <div class="viz" id="cascades1Lite">
+
+      </div>
+      <script src="archive/d3Lite/cascades1Lite.js"></script>
+      <hr>
+      <h5 class="card-title">Cascades 1</h5>
+      <p class="card-text">Noisy lines generated with D3.js</p>
+      <a href="#" class="btn btn-outline-light btn-sm">yeet</a>
+    </div>
+  </div>
+
+  <br><br>
+  <div class="archive-link" style="text-align: right;">
+    <a href="#" class="btn btn-dark btn-sm">Top</a>
+  </div>
+
+
+
+</div>
+
+<br><br><br><br><br><br>
+<footer>
+<div class="footer">
+  <div class="footer contents">
+        <a href="https://github.com/mjdanese/mdanesecom"
+           target="_blank"
+           class="btn btn-outline-light btn-sm">Github</a>
+        <a href="https://www.instagram.com/mdanese/"
+           target="_blank"
+           class="btn btn-outline-light btn-sm">ʕ•ᴥ•ʔ</a>
+       <a class="btn btn-outline-light btn-sm"
+          data-toggle="collapse"
+          href="#collapseContact"
+          role="button"
+          aria-expanded="false"
+          aria-controls="collapseContact"
+          onclick="collapseClick(this)"
+          id="collapseContactButton">Contact</a>
+
+        <div class="collapse" id="collapseContact">
+          <br>
+          <div class="card dark-background">
+            <br>
+            <p>Marshall Danese</p>
+            <a href="mailto:marshalldanese@gmail.com"
+               class="dark-background-link"
+               style="color:white;">marshalldanese@gmail.com</a>
+            <a href="https://www.linkedin.com/in/mjdanese/"
+               target="_blank"
+               style="color:white;">LinkedIn</a>
+            <br>
+          </div>
+          <br>
+</div>
+
+</footer>
+</body>
+</html>
