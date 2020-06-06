@@ -69,7 +69,7 @@ var app = new Vue({
       this.number += 5
       this.scripts.push('archive/d3/cascades1.js')
       this.scripts.splice(0,1)
-      cascade1()
+      cascades1()
     }
   }
 })

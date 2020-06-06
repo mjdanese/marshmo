@@ -1,4 +1,4 @@
-function cascades1() {d3.select("svg").remove();
+export default function cascades1() {d3.select("svg").remove();
 console.log("FULL")
 
 const heightValue = 550;
