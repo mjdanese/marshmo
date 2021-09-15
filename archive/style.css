@@ -106,3 +106,13 @@ code {
 hr {
   border-top: 1px solid rgba(255,255,255,0.9);
 }
+
+img {
+  border: 1px solid black;
+  border-radius: 2px;
+  background-color: rgba(0,0,0,0.9);
+  color: white;
+  -moz-box-shadow:      0 0 10px rgba(0,0,0,0.4);
+  -webkit-box-shadow:   0 0 10px rgba(0,0,0,0.4);
+  box-shadow:           0 0 10px rgba(0,0,0,0.4);  
+}
