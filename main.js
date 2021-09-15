@@ -61,7 +61,7 @@ var app = new Vue({
   data: {
     title: 'Cascades ',
     description: 'Another take on noisy lines in D3.',
-    scripts: ['archive/d3Lite/cascades1.js'],
+    scripts: ['archive/d3/cascades1.js'],
     number: 4
   },
   methods: {
