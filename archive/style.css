@@ -37,6 +37,11 @@ body {
   -moz-box-shadow:      0 0 10px rgba(0,0,0,0.4);
   -webkit-box-shadow:   0 0 10px rgba(0,0,0,0.4);
   box-shadow:           0 0 10px rgba(0,0,0,0.4);
+  transition:1s;
+}
+
+.card:hover {
+  box-shadow:           0 0 15px rgba(0,0,0,0.8);  
 }
 
 .dark-background {
