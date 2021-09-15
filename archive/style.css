@@ -38,11 +38,6 @@ body {
   transition:1s;
 }
 
-.card:hover {
-  border: 1px solid white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.8);  
-}
-
 .dark-background {
   background-color:rgba(0,0,0,1);
   color: white;
@@ -119,4 +114,10 @@ img {
   -moz-box-shadow:      0 0 10px rgba(0,0,0,0.4);
   -webkit-box-shadow:   0 0 10px rgba(0,0,0,0.4);
   box-shadow:           0 0 10px rgba(0,0,0,0.4);  
+}
+
+.img:hover {
+  border: 1px solid white; 
+  padding: 20px;
+  width: 400px;
 }
