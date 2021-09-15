@@ -2,7 +2,7 @@ Vue.component('navtop', {
   template: `
 
   <div>
-    <h1><a class='titleRef' href='index.html'>marshmo</a></h1><br>
+    <h1><a class='titleRef' href='index.html'>marshmo's blog</a></h1><br>
     <button @click='sendUpdate' class="btn btn-dark btn-sm">Random</button>
     <a href="/archive" class="btn btn-dark btn-sm">Archive</a>
     <a href="/2021-09-14" class="btn btn-dark btn-sm">2021-09-14 / Cat</a>
