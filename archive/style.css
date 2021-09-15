@@ -5,6 +5,7 @@ html {
 
 body {
   background-color: rgba(230,230,230,0.15);
+  max-width: 900px;
 }
 
 /* div classes */
