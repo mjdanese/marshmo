@@ -109,15 +109,9 @@ hr {
 img {
   border: 1px solid black;
   border-radius: 4px;
-  background-color: rgba(0,0,0,0.9);
-  color: white;
   -moz-box-shadow:      0 0 10px rgba(0,0,0,0.4);
   -webkit-box-shadow:   0 0 10px rgba(0,0,0,0.4);
   box-shadow:           0 0 10px rgba(0,0,0,0.4); 
-  padding: 20px;
+  margin: 20px;
   width: 400px; 
-}
-
-.img:hover {
-  border: 1px solid white; 
 }
