@@ -2,9 +2,16 @@ Vue.component('navtop', {
   template: `
 
   <div>
-    <h1><a class='titleRef' href='index.html'>marshmo's blog</a></h1><br>
-    <button @click='sendUpdate' class="btn btn-dark btn-sm">Random</button>
-    <a href="/archive" class="btn btn-dark btn-sm">Archive</a>
+    <h1><a class='titleRef' href='index.html'>marshmo's blawg</a></h1><br>
+    <a href="/2021-09-14" class="btn btn-dark btn-sm">2021-09-23 / Placeholder</a>
+    <a href="/2021-09-14" class="btn btn-dark btn-sm">2021-09-22 / Placeholder</a>
+    <a href="/2021-09-14" class="btn btn-dark btn-sm">2021-09-21 / Placeholder</a>
+    <a href="/2021-09-14" class="btn btn-dark btn-sm">2021-09-20 / Placeholder</a>
+    <a href="/2021-09-14" class="btn btn-dark btn-sm">2021-09-19 / Placeholder</a>
+    <a href="/2021-09-14" class="btn btn-dark btn-sm">2021-09-18 / Placeholder</a>
+    <a href="/2021-09-14" class="btn btn-dark btn-sm">2021-09-17 / Placeholder</a>
+    <a href="/2021-09-14" class="btn btn-dark btn-sm">2021-09-16 / Placeholder</a>
+    <a href="/2021-09-14" class="btn btn-dark btn-sm">2021-09-15 / Placeholder</a>
     <a href="/2021-09-14" class="btn btn-dark btn-sm">2021-09-14 / Cat</a>
     <br><br>
   </div>
