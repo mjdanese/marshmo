@@ -3,16 +3,16 @@ Vue.component('navtop', {
 
   <div>
     <h1><a class='titleRef' href='index.html'>marshmo's blawg</a></h1><br>
-    <a href="/2021-09-14" class="btn btn-dark btn-sm">2021-09-23 / These</a>
-    <a href="/2021-09-14" class="btn btn-dark btn-sm">2021-09-22 / Are</a>
-    <a href="/2021-09-14" class="btn btn-dark btn-sm">2021-09-21 / Placeholder</a>
-    <a href="/2021-09-14" class="btn btn-dark btn-sm">2021-09-20 / Posts</a>
-    <a href="/2021-09-14" class="btn btn-dark btn-sm">2021-09-19 / For</a>
-    <a href="/2021-09-14" class="btn btn-dark btn-sm">2021-09-18 / Future</a>
-    <a href="/2021-09-14" class="btn btn-dark btn-sm">2021-09-17 / Use</a>
-    <a href="/2021-09-14" class="btn btn-dark btn-sm">2021-09-16 / By</a>
-    <a href="/2021-09-14" class="btn btn-dark btn-sm">2021-09-15 / Marshmo</a>
-    <a href="/2021-09-14" class="btn btn-dark btn-sm">2021-09-14 / Cat</a>
+    <a href="/2021-09-14" class="btn btn-outline-dark btn-sm">2021-09-23 / These</a>
+    <a href="/2021-09-14" class="btn btn-outline-dark btn-sm">2021-09-22 / Are</a>
+    <a href="/2021-09-14" class="btn btn-outline-dark btn-sm">2021-09-21 / Placeholder</a>
+    <a href="/2021-09-14" class="btn btn-outline-dark btn-sm">2021-09-20 / Posts</a>
+    <a href="/2021-09-14" class="btn btn-outline-dark btn-sm">2021-09-19 / For</a>
+    <a href="/2021-09-14" class="btn btn-outline-dark btn-sm">2021-09-18 / Future</a>
+    <a href="/2021-09-14" class="btn btn-outline-dark btn-sm">2021-09-17 / Use</a>
+    <a href="/2021-09-14" class="btn btn-outline-dark btn-sm">2021-09-16 / By</a>
+    <a href="/2021-09-14" class="btn btn-outline-dark btn-sm">2021-09-15 / Marshmo</a>
+    <a href="/2021-09-14" class="btn btn-outline-dark btn-sm">2021-09-14 / Cat</a>
     <br><br>
   </div>
 
