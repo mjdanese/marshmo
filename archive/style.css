@@ -114,11 +114,12 @@ hr {
 }
 
 img {
-  border: 1px solid black;
   border-radius: 4px;
   -moz-box-shadow:      0 0 10px rgba(0,0,0,0.4);
   -webkit-box-shadow:   0 0 10px rgba(0,0,0,0.4);
   box-shadow:           0 0 10px rgba(0,0,0,0.4); 
-  margin: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   width: 425px; 
 }
