@@ -53,6 +53,7 @@ body {
   font-family: Inconsolata;
   border-radius:3px;
   min-width: 30px;
+  margin-bottom: 10px;
 }
 
 .btn:focus {
